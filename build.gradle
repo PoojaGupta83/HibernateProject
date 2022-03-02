@@ -1,0 +1,27 @@
+plugins {
+	id 'org.springframework.boot' version '2.6.4'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'com.springboot-hibernate'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+	implementation group: 'org.hibernate', name: 'hibernate-core', version: '5.4.2.Final'
+	implementation group: 'org.projectlombok', name: 'lombok', version: '1.18.20'
+
+	implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.26'
+
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
